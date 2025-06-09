@@ -5,51 +5,54 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Snappit - Create Post</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:FILL@1" />
   <link rel="stylesheet" href="post.css"/>
 </head>
 <body>
   <header class="header">
-    <div class="left">
-      <img src="images/logo.png" class="logo" alt="Logo"/>
+    <a href="index.html" class="left link-button">
+      <img src="images/logo.png" class="logo" alt="Logo" />
       <h1 class="brand">Snappit</h1>
-    </div>
+    </a>
     <div class="right">
-      <span class="material-symbols-outlined">notifications</span>
-      <span class="username">Lhanz Hubilla</span>
-      <img src="images/avatar.png" class="avatar" alt="Avatar"/>
+      <span class="material-symbols-outlined filled notifications-icon">notifications</span>
+      <a href="/home" class="left link-button">
+        <span class="username">Lhanz Hubilla</span>
+        <img src="images/avatar.png" class="avatar" alt="Avatar"/>
+      </a>
     </div>
   </header>
 
-  <main class="main">
-    <div class="create-post-header">
-      <span class="back-arrow">←</span>
-      <h2>Create Post</h2>
-    </div>
+    <main class="main">
+      <div class="create-post-header">
+        <a href="/home" class="back-button">
+          <span class="material-symbols-outlined">arrow_back_ios</span>
+        </a>
+        <h2>Create Post</h2>
+      </div>
 
     <section class="content">
       <div class="upload-area">
-        <div class="drop-zone">
+        <label class="drop-zone" for="fileInput">
+          <input type="file" id="fileInput" accept=".jpg,.jpeg,.png" hidden />
           <span class="material-symbols-outlined upload-icon">cloud_upload</span>
           <p class="upload-text">Choose a file or drag and drop<br>it here</p>
           <p class="upload-note">We recommend using high quality .jpeg or .png files less than 20MB</p>
-        </div>
-        <button class="change-photo">Change photo</button>
+        </label>
+        <button class="change-photo" onclick="document.getElementById('fileInput').click()">Change photo</button>
       </div>
 
       <div class="form-area">
         <label for="title">Title</label>
         <input id="title" type="text" placeholder="Add title..">
-
         <label for="desc">Description</label>
-        <textarea id="desc" placeholder="Add a detailed description"></textarea>
-
+        <textarea id="desc" placeholder="Add a short detailed description"></textarea>
         <label for="tags">Tags / categories (0)</label>
         <input id="tags" type="text" placeholder="Search for a tag or category">
-
         <button class="publish">Publish</button>
       </div>
     </section>
   </main>
+
 </body>
 </html>
