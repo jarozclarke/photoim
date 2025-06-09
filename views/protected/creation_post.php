@@ -9,7 +9,7 @@
 		</a>
 		<h2 class="text-2xl font-bold">Create Post</h2>
 	</div>
-	<section class="content">
+	<form method="POST" action="<?= basePath('/creation-post') ?>" class="content">
 		<div class="upload-area relative overflow-hidden" ondrop="dropHandler(event)"
 			ondragover="dragOverHandler(event)">
 			<label class="drop-zone relative overflow-hidden" for="fileInput">
@@ -30,9 +30,9 @@
 			<textarea id="desc" placeholder="Add a short detailed description"></textarea>
 			<label for="tags">Tags / categories (0)</label>
 			<input id="tags" type="text" placeholder="Search for a tag or category">
-			<button class="publish">Publish</button>
+			<button class="publish" type="submit">Publish</button>
 		</div>
-	</section>
+	</form>
 </main>
 <script>
 	function dropHandler(ev) {
