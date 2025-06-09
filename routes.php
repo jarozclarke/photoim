@@ -6,6 +6,7 @@ require_once BASE_PATH . '/core/Auth.php';
 
 $user = new UserController();
 
+
 global $render;
 
 $router->get('/', function() use($render){
@@ -38,5 +39,9 @@ $router->post('/login', fn() => $user->handleLogin());
 $router->get('/feed', function() use($render){
 	requireAuth();
 	$render->setLayout('layouts/protected');
-	$render->view('protected/feed', ['title' => 'Feed']);
+
+	$tagController = new TagController();
+	$tags = $tagController->handleFetchTags();
+
+	$render->view('protected/feed', ['title' => 'Feed', 'tags' => $tags]);
 });
