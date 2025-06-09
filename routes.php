@@ -1,6 +1,7 @@
 <?php
 
 require_once BASE_PATH . '/controllers/UserController.php';
+require_once BASE_PATH . '/controllers/TagController.php';
 require_once BASE_PATH . '/core/Auth.php';
 
 $user = new UserController();
@@ -9,7 +10,14 @@ global $render;
 
 $router->get('/', function() use($render){
 	redirectIfAuthenticated();
-	$render->view('home', ['title' => 'Photoim']);
+
+	$tagController = new TagController();
+	$tags = $tagController->handleFetchTags();
+
+	$render->view('home', [
+		'title' => 'Photoim',
+		'tags' => $tags
+	]);
 });
 
 $router->get('/register', function() use($render){

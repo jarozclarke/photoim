@@ -10,25 +10,28 @@
 	</title>
 </head>
 <body class="min-h-screen bg-[#1e1e1e] text-gray-200">
-	<div class="navbar bg-transparent shadow-sm p-5">
-	  <div class="flex-1">
-	    <a class="btn btn-ghost text-xl">SnapIT</a>
-	  </div>
-	  <div class="flex gap-2">
-	    <input type="text" placeholder="Search" class="input input-bordered w-24 bg-transparent md:w-auto" />
-	    <a
-	    	href="<?= basePath('/login') ?>"
-	    	class="btn btn-default shadow-none border-none"
-	    	>
-	    		Sign In
-	    </a>
-	    <a
-	    	href="<?= basePath('/register') ?>"
-	    	class="btn btn-primary shadow-none border-none">
-	    		Sign Up
-	    </a>
-	  </div>
-	</div>
-	<?= $content ?> 
+  <div class="navbar flex justify-between items-center bg-transparent shadow-sm px-6 py-4">
+    <!-- Logo and brand -->
+    <div class="flex items-center gap-3">
+      <img src="assets/images/header-logo.png" class="h-10 w-10" alt="Logo" />
+      <p class="font-semibold text-xl cursor-pointer">SnapIT</p>
+    </div>
+
+    <div class="flex gap-2">
+      <a
+        href="<?= basePath('/login') ?>"
+        class="btn bg-transparent text-blue-400 border-2 border-blue-400 shadow-none hover:bg-blue-400 hover:text-white transition">
+        Sign In
+      </a>
+      <a
+        href="<?= basePath('/register') ?>"
+        class="btn btn-primary shadow-none border-none hover:brightness-110 transition">
+        Sign Up
+      </a>
+    </div>
+  </div>
+
+  <?= $content ?> 
 </body>
+
 </html>
