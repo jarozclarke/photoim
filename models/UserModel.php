@@ -21,6 +21,13 @@ class UserModel {
 		return $selectQuery->fetch();
 	}
 
+	public function fetchUsernameAvatar($email){
+	    $selectQuery = $this->pdo->prepare("SELECT username, avatar_path FROM users WHERE email = ?");
+	    $selectQuery->execute([$email]);
+	    return $selectQuery->fetch(PDO::FETCH_ASSOC);
+	}
+
+
 	public function create($username, $email, $password){
 		$hash_password = password_hash($password, PASSWORD_DEFAULT);
 

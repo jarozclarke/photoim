@@ -11,13 +11,24 @@
 </head>
 <body class="min-h-screen bg-[#1e1e1e] text-gray-200">
   <div class="navbar flex justify-between items-center bg-transparent shadow-sm px-6 py-4">
-    <!-- Logo and brand -->
     <div class="flex items-center gap-3">
       <img src="assets/images/header-logo.png" class="h-10 w-10" alt="Logo" />
       <p class="font-semibold text-xl cursor-pointer">SnapIT</p>
     </div>
-  </div>
 
+    <div class="flex gap-3 items-center">
+	  <p class="text-sm font-medium"><?= htmlspecialchars($userData['username'] ?? 'Guest') ?></p>
+	  <img src="<?= basePath('/' . htmlspecialchars($userData['avatar_path'] ?? 'assets/images/user/avatar1.png')) ?>" alt="Avatar"
+	       class="h-10 w-10 rounded-full object-cover" />
+	  
+	  <a 
+	    href="<?= basePath('/logout') ?>"
+	    class="btn border-none bg-red-500 shadow-none text-white"
+	  >
+	    Logout
+	  </a>
+	</div>
+  </div>
   <?= $content ?> 
 </body>
 
