@@ -9,7 +9,8 @@
 		<?= $title ?? 'Photoim' ?>		
 	</title>
 </head>
-<body class="h-screen bg-[url(assets/images/login/bg1.png)] bg-no-repeat p-20">
+<body class="h-screen bg-[url(assets/images/login/bg1.png)] bg-no-repeat p-20 relative">
+	<div class="absolute inset-0 backdrop-blur-sm bg-white/50"></div>
 	<?php if(isset($_GET['registered_success'])): ?>
 		<div role="alert" id="registered" class="alert alert-success">
 		  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 shrink-0 stroke-current" fill="none" viewBox="0 0 24 24">

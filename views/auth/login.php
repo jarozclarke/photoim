@@ -1,5 +1,6 @@
-<div class="flex h-[80dvh] rounded-lg bg-white/50">
-	<div class="w-100 bg-[url(assets/images/login/bg2.png)]"></div>
+<div class="flex h-[80dvh] bg-white/50 relative z-10">
+	<div class="w-100 bg-[url(assets/images/login/bg.png)] bg-center bg-no-repeat aspect-3/2 object-cover
+	"></div>
 	<div class="w-full bg-white flex flex-col justify-center items-center tracking-wider">
 		<h1 class="font-light text-2xl">Login Account</h1>	
 		<div>
@@ -17,8 +18,8 @@
 				Password	
 			</label>
 			<input type="password" name="password" class="p-2 background-transparent rounded-lg border-gray-400" required/>
-			<button class="btn btn-primary w-full rounded-lg mt-2">
-				Login account
+			<button class="btn bg-[#0dc1fa] w-full rounded-full mt-2 text-white">
+				Login an account
 			</button>
 		</form>
 	</div>
