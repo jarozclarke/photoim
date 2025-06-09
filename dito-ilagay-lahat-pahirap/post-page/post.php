@@ -33,12 +33,12 @@
 
     <section class="content">
       <div class="upload-area">
-        <label class="drop-zone" for="fileInput">
-          <input type="file" id="fileInput" accept=".jpg,.jpeg,.png" hidden />
-          <span class="material-symbols-outlined upload-icon">cloud_upload</span>
-          <p class="upload-text">Choose a file or drag and drop<br>it here</p>
-          <p class="upload-note">We recommend using high quality .jpeg or .png files less than 20MB</p>
-        </label>
+          <label class="drop-zone" id="drop-area" for="fileInput">
+            <input type="file" id="fileInput" accept=".jpg,.jpeg,.png" multiple hidden />
+            <span class="material-symbols-outlined upload-icon">cloud_upload</span>
+            <p class="upload-text">Choose a file or drag and drop<br>it here</p>
+            <p class="upload-note">We recommend using high quality .jpeg or .png files less than 20MB</p>
+          </label>
         <button class="change-photo" onclick="document.getElementById('fileInput').click()">Change photo</button>
       </div>
 
@@ -53,6 +53,6 @@
       </div>
     </section>
   </main>
-
+  <script src="script.js"></script>
 </body>
 </html>
