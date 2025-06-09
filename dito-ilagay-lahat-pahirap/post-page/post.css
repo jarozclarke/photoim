@@ -130,7 +130,11 @@ body {
   border: 2px dashed transparent;
 }
 
-.drop-zone.dragover,
+.drop-zone.drag-over {
+  background: #e0f0ff;
+  border: 2px dashed #0077cc;
+}
+
 .drop-zone:hover {
   background: #e0f0ff;
   border: 2px dashed #0077cc;
