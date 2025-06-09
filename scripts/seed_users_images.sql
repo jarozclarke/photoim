@@ -1,0 +1,22 @@
+INSERT INTO users_images (user_id, tag_id, name, image_path, is_favorite)
+VALUES 
+(1, 1, 'Image 1', 'assets/images/user/post_image1.png', 1),
+(2, 2, 'Image 2', 'assets/images/user/post_image1.png', 0),
+(3, 3, 'Image 3', 'assets/images/user/post_image1.png', 1),
+(4, 4, 'Image 4', 'assets/images/user/post_image1.png', 0),
+(5, 5, 'Image 5', 'assets/images/user/post_image1.png', 1),
+(6, 6, 'Image 6', 'assets/images/user/post_image1.png', 0),
+(7, 7, 'Image 7', 'assets/images/user/post_image1.png', 1),
+(8, 8, 'Image 8', 'assets/images/user/post_image1.png', 0),
+(9, 9, 'Image 9', 'assets/images/user/post_image1.png', 1),
+(10, 10, 'Image 10', 'assets/images/user/post_image1.png', 0),
+(11, 11, 'Image 11', 'assets/images/user/post_image1.png', 1),
+(12, 12, 'Image 12', 'assets/images/user/post_image1.png', 0),
+(13, 13, 'Image 13', 'assets/images/user/post_image1.png', 1),
+(14, 14, 'Image 14', 'assets/images/user/post_image1.png', 0),
+(15, 15, 'Image 15', 'assets/images/user/post_image1.png', 1),
+(16, 16, 'Image 16', 'assets/images/user/post_image1.png', 0),
+(17, 17, 'Image 17', 'assets/images/user/post_image1.png', 1),
+(18, 18, 'Image 18', 'assets/images/user/post_image1.png', 0),
+(19, 19, 'Image 19', 'assets/images/user/post_image1.png', 1),
+(20, 20, 'Image 20', 'assets/images/user/post_image1.png', 0);
