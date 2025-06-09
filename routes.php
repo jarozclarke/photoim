@@ -2,11 +2,11 @@
 
 require_once BASE_PATH . '/controllers/UserController.php';
 require_once BASE_PATH . '/controllers/TagController.php';
-require_once BASE_PATH . '/controllers/PostController.php';
+require_once BASE_PATH . '/controllers/UserImageController.php';
 require_once BASE_PATH . '/core/Auth.php';
 
 $user = new UserController();
-$post = new PostController();
+$userImage = new UserImageController();
 
 global $render;
 
@@ -53,9 +53,9 @@ $router->get('/creation-post', function () use ($render) {
 	$render->view('protected/creation_post', ['title' => 'Create Post']);
 });
 
-$router->post('/creation-post', function () use ($post, $render) {
+$router->post('/creation-post', function () use ($userImage, $render) {
 	requireAuth();
-	$post->handlePost();
+	$userImage->handlePost();
 
 	$render->view('protected/feed', ['title' => 'Feed']);
 });

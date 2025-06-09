@@ -1,17 +1,17 @@
 <?php
 
 require_once __DIR__ . '/../core/Database.php';
-require_once __DIR__ . '/../models/PostModel.php';
+require_once __DIR__ . '/../models/UserImageModel.php';
 
-class PostController
+class UserImageController
 {
 	private $pdo;
-	private $postModel;
+	private $userImageModel;
 
 	public function __construct()
 	{
 		$this->pdo = new Database();
-		$this->postModel = new PostModel($this->pdo->connection);
+		$this->userImageModel = new UserImageModel($this->pdo->connection);
 	}
 
 	public function handlePost()
@@ -27,16 +27,16 @@ class PostController
 		}
 
 		if (!$user_id || !$tag_id || !$title || !$image_path) {
-			header('Location: ' . basePath('/creation-post?error=Missing required fields'));
+			header('Location: ' . basePath('/creation-post?error=Missing-required-fields--userID=' . $user_id . '--tagID=' . $tag_id . '--title=' . $title . '--imagePath=' . $image_path));
 			exit;
 		}
 
 		if (!move_uploaded_file($image_path, 'uploads/' . basename($_FILES['image']['name']))) {
-			header('Location: ' . basePath('/creation-post?error=Failed to upload image'));
+			header('Location: ' . basePath('/creation-post?error=Failed-to-upload-image'));
 			exit;
 		}
 
-		$this->postModel->create($user_id, $tag_id, $title, $description, 'uploads/' . basename($_FILES['image']['name']));
+		$this->userImageModel->create($user_id, $tag_id, $title, $description, 'uploads/' . basename($_FILES['image']['name']));
 
 		header('Location: ' . basePath('/feed?post_created=true'));
 		exit;

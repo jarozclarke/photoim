@@ -1,4 +1,3 @@
-<a href="<?= basePath('/creation-post') ?>">CREATE POST</a>
 <div class="flex flex-wrap justify-center items-center gap-4 my-10">
   <label class="input rounded-full bg-transparent border border-gray-200">
     <svg class="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">

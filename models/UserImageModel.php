@@ -2,7 +2,7 @@
 
 require_once __DIR__ . '/../core/Database.php';
 
-class PostModel
+class UserImageModel
 {
 	private $pdo;
 
@@ -13,7 +13,7 @@ class PostModel
 
 	public function create($user_id, $tag_id, $title, $description, $image_path)
 	{
-		$query = $this->pdo->prepare('INSERT INTO posts (user_id, tag_id, title, description, image_path) VALUES (?, ?, ?, ?, ?)');
+		$query = $this->pdo->prepare('INSERT INTO users_images (user_id, tag_id, title, description, image_path) VALUES (?, ?, ?, ?, ?)');
 		$query->execute([$user_id, $tag_id, $title, $description, $image_path]);
 	}
 }

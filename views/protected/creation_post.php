@@ -9,27 +9,30 @@
 		</a>
 		<h2 class="text-2xl font-bold">Create Post</h2>
 	</div>
-	<form method="POST" action="<?= basePath('/creation-post') ?>" class="content">
+	<form method="POST" action="<?= basePath('/creation-post') ?>" class="content" enctype="multipart/form-data">
 		<div class="upload-area relative overflow-hidden" ondrop="dropHandler(event)"
 			ondragover="dragOverHandler(event)">
 			<label class="drop-zone relative overflow-hidden" for="fileInput">
 				<div id="preview" class="absolute w-full h-full overflow-hidden"></div>
-				<input type="file" id="fileInput" accept=".jpg,.jpeg,.png" hidden />
+				<input type="file" name="image" id="fileInput" accept=".jpg,.jpeg,.png" hidden
+					onchange="handleFileInput(this)" />
 				<span class="material-symbols-outlined upload-icon">cloud_upload</span>
 				<p class="upload-text">Choose a file or drag and drop<br>it here</p>
 				<p class="upload-note">We recommend using high quality .jpeg or .png files less than 20MB</p>
 			</label>
-			<button class="change-photo" onclick="document.getElementById('fileInput').click()">Change
-				photo</button>
+			<button class="change-photo" type="button" onclick="document.getElementById('fileInput').click()">
+				Change photo
+			</button>
+
 		</div>
 
 		<div class="form-area">
 			<label for="title">Title</label>
-			<input id="title" type="text" placeholder="Add title..">
+			<input id="title" type="text" name="title" placeholder="Add title..">
 			<label for="desc">Description</label>
-			<textarea id="desc" placeholder="Add a short detailed description"></textarea>
+			<textarea id="desc" name="description" placeholder="Add a short detailed description"></textarea>
 			<label for="tags">Tags / categories (0)</label>
-			<input id="tags" type="text" placeholder="Search for a tag or category">
+			<input id="tags" name="tag_id" type="text" placeholder="Search for a tag or category">
 			<button class="publish" type="submit">Publish</button>
 		</div>
 	</form>
@@ -71,6 +74,7 @@
 
 	// Handle manual file selection
 	function handleFileInput(input) {
+		console.log("File added manually");
 		const file = input.files[0];
 		const preview = document.getElementById('preview');
 		preview.innerHTML = '';
