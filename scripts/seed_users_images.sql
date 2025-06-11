@@ -1,4 +1,4 @@
-INSERT INTO users_images (user_id, tag_id, name, image_path, is_favorite)
+INSERT INTO users_images (user_id, tag_id, title, image_path, is_favorite)
 VALUES 
 (1, 1, 'Image 1', 'assets/images/user/post_image1.png', 1),
 (2, 2, 'Image 2', 'assets/images/user/post_image1.png', 0),
