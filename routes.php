@@ -52,7 +52,7 @@ $router->get('/feed', function() use($render, $auth, $user){
     $tags = $tagController->handleFetchTags();
 
     $userEmail = $auth->userId();
-    $userData = $user->handleFetchUsernameAvatar($userEmail);
+    $userData = $user->handleFetchUsernameAvatar($userEmail);       
 
     $render->setLayout('layouts/protected');
     $render->view('protected/feed', [

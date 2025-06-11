@@ -27,7 +27,7 @@ class UserController
 		if ($user && password_verify($password, $user['password'])) {
 			session_start();
 			$_SESSION['user'] = $user['email'];
-
+			$this->auth->login($user);
 			header('Location: ' . basePath('/feed'));
 			exit;
 		} else {
@@ -59,7 +59,11 @@ class UserController
 		}
 
 		$this->userModel->create($username, $email, $password);
-		header("Location: " . basePath('/login?registered_success=true'));
-		exit;
+			header("Location: " . basePath('/login?registered_success=true'));
+			exit;
+	}
+	
+	public function handleFetchUsernameAvatar($email) {
+		return $this->userModel->fetchUsernameAvatar($email);
 	}
 }
