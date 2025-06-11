@@ -12,8 +12,6 @@ global $render;
 $router->get('/', function() use($render, $auth){
     $auth->redirectIfAuthenticated();
 
-	redirectIfAuthenticated();
-
     $tagController = new TagController();
     $tags = $tagController->handleFetchTags();
 
@@ -35,8 +33,8 @@ $router->get('/login', function() use($render, $auth){
     $render->view('auth/login', ['title' => 'Login Now']);
 }); 
 
-$router->get('/register', function () use ($render) {
-	redirectIfAuthenticated();
+$router->get('/register', function () use ($render, $auth) {
+    $auth->redirectIfAuthenticated();
 	$render->setLayout('layouts/auth');
 	$render->view('auth/register', ['title' => 'Register Now']);
 });
@@ -70,9 +68,8 @@ $router->get('/logout', function() use($auth){
     exit;
 });
 
-$router->get('/creation-post', function () use ($render) {
-	requireAuth();
+$router->get('/creation-post', function () use ($render, $auth) {
+	$auth->requireAuth();
 	$render->setLayout('layouts/protected');
 	$render->view('protected/creation_post', ['title' => 'Create Post']);
 });
-
