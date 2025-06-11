@@ -6,14 +6,14 @@ require_once BASE_PATH . '/controllers/UserImageController.php';
 require_once BASE_PATH . '/core/Auth.php';
 
 $user = new UserController();
-
+$auth = new Auth();
 
 global $render;
 
 $router->get('/', function () use ($render, $auth) {
     $auth->redirectIfAuthenticated();
 
-    redirectIfAuthenticated();
+    // redirectIfAuthenticated();
 
     $tagController = new TagController();
     $tags = $tagController->handleFetchTags();
