@@ -2,16 +2,19 @@
 
 require_once __DIR__ . '/../models/UserModel.php';
 require_once __DIR__ . '/../core/Database.php';
+require_once __DIR__ . '/../core/Auth.php';
 
 class UserController
 {
 	private $pdo;
 	private $userModel;
+	private $auth;
 
 	public function __construct()
 	{
 		$this->pdo = new Database();
 		$this->userModel = new UserModel($this->pdo->connection);
+		$this->auth = new Auth();
 	}
 
 	public function handleLogin()

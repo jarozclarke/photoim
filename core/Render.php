@@ -4,7 +4,6 @@ class Render {
 	private $layout = 'layouts/default';
 	private $data = [];
 
-
 	public function setLayout($layout){
 		$this->layout = $layout;
 	}
@@ -23,16 +22,15 @@ class Render {
 
 	private function includeView($path, $data){
 		$path = str_replace('.', '/', $path);
-		extract($data);
-
+		extract($data); 
 		require BASE_PATH . '/views/' . $path . '.php';
 	}
 
 	private function renderLayout(){
 		ob_start();
-		$this->includeView($this->layout, $this->data);
+		extract($this->data); 
+		require BASE_PATH . '/views/' . $this->layout . '.php';
 		$output = ob_get_clean();
-
 		echo $this->callback($output);
 	}
 

@@ -3,75 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Snappit Profile</title>
+    <title>Snappit Profile Page</title>
     <link rel="stylesheet" href="design/css/profile_page.css">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header class="navbar">
-        <div class="logo-section">
-            <div class="logo"></div>
-            <div class="logo-text">Snappit</div>
+    <header class="header">
+        <div class="logo"><img src="design/photos/Logo.png" alt="" class="logo"></div>
+        <div class="title">Snappit</div>
+        <div class="new-post-button">
+            <div class="icon"><span class="material-symbols-outlined icon-small">add</span></div>
+            <div class="text">New Post</div>
         </div>
-        <button class="btn new-post">
-            <div class="icon"></div>
-            New Post
-        </button>
         <div class="user-info">
+            <div class="menu-icon"><span class="material-symbols-outlined icon-big">notifications</span></div>
             <div class="username">Lhanz Hubilla</div>
-            <div class="icon"></div>
-            <img src="https://placehold.co/55x55" alt="Profile" class="profile-pic">
+            <img class="profile-pic-small" src="design/photos/user_profile.jpg" alt="Profile Pic Small">
         </div>
     </header>
+    <div class="cover-photo-container">
+        <img class="cover-photo" src="design/photos/cover2.webp" alt="Cover Photo">
+    </div>
+    <main class="profile-content">
+        <div class="profile-picture-wrapper">
+            <div class="profile-outline"></div>
+            <img class="profile-picture" src="design/photos/user_profile.jpg" alt="Profile Picture">
+        </div>
 
-    <main>
-        <section class="profile-header">
-           <img class="cover-photo" src="https://placehold.co/1733x1128" alt="Cover Photo">
-            <div class="overlay"></div>
-
-            <div class="profile-picture-wrapper">
-                <div class="blur-circle"></div>
-                <img class="profile-picture" src="https://placehold.co/355x372" alt="Profile Pic">
-            </div>
-
-            <div class="profile-details">
+        <div class="profile-details">
+            <div class="profile-view">
                 <h1>Lhanz Hubilla</h1>
                 <p>Currently studying BSIT</p>
                 <p>Living in Cavite</p>
-                <div class="nav-links">
-                    <span>Post</span>
-                    <span>Pins</span>
-                    <span>About</span>
-                </div>
-                <div class="divider"></div>
-                <button class="btn edit-profile">
-                    <div class="icon"></div>
-                    Edit Profile
-                </button>
             </div>
-        </section>
+            
+            <div class="edit-profile-button">
+                <div class="edit-icon"><span class="material-symbols-outlined">edit</span></div>
+                <div class="edit-text">Edit profile</div>
+            </div>
+        </div>
+
+        <nav class="profile-nav">
+            <div>Post</div>
+            <div>Pins</div>
+            <div>About</div>
+        </nav>
+
+        <hr class="divider">
 
         <section class="posts">
             <div class="post">
-                <img src="https://placehold.co/457x343" alt="Post Image">
-                <div class="post-caption">My brother died IJBOL</div>
-                <div class="post-tags">#Deadge #LOL #2Gether4Ever</div>
-                <div class="post-actions">
-                    <button class="like-btn">
-                        <div class="icon"></div>
-                        4.3k
-                    </button>
+                <img src="design/photos/post1.webp" alt="Post Image">
+                <div class="caption-details">
+                    <div class="caption-text">
+                        <div class="caption">My brother died IJBOL</div>
+                        <div class="tags">#Deadge #LOL #2Gether4Ever</div>
+                    </div>
+                    
+                    <div class="likes">
+                        <div class="like-icon"><span class="material-symbols-outlined">favorite</span></div>
+                        <span>4.3k</span>
+                    </div>
                 </div>
             </div>
 
             <div class="post">
-                <img src="https://placehold.co/457x343" alt="Post Image">
-                <div class="post-caption">New Profile pic</div>
-                <div class="post-tags">#Pfp #pics</div>
-                <div class="post-actions">
-                    <button class="like-btn">
-                        <div class="icon"></div>
-                        41k
-                    </button>
+                <img src="design/photos/user_profile.jpg" alt="Post Image">
+                <div class="caption-details">
+                    <div class="caption-text">
+                        <div class="caption">New profile pic</div>
+                        <div class="tags">#Pfp #pics</div>
+                    </div>
+                    
+                    <div class="likes">
+                        <div class="like-icon"><span class="material-symbols-outlined">favorite</span></div>
+                        <span>4.3k</span>
+                    </div>
                 </div>
             </div>
         </section>
