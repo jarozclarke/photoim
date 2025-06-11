@@ -5,6 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
 	<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet"/>
 	<title>
 		<?= $title ?? 'Photoim' ?>		
 	</title>
@@ -13,7 +14,7 @@
   <div class="navbar flex justify-between items-center bg-transparent shadow-sm px-6 py-4">
     <div class="flex items-center gap-3">
       <img src="assets/images/header-logo.png" class="h-10 w-10" alt="Logo" />
-      <p class="font-semibold text-xl cursor-pointer">SnapIT</p>
+      <p class="font-semibold text-xl cursor-pointer">Snappit</p>
     </div>
 
     <div class="flex gap-3 items-center">
