@@ -41,7 +41,7 @@
 </div>
 
 <div class="mx-10 grid grid-cols-2 md:grid-cols-4 gap-4">
-  <div class="grid gap-4">
+  <div class="grid gap-4 cursor-pointer">
     <div>
       <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image.jpg"
         alt="">
@@ -55,7 +55,7 @@
         alt="">
     </div>
   </div>
-  <div class="grid gap-4">
+  <div class="grid gap-4 cursor-pointer">
     <div>
       <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-3.jpg"
         alt="">
@@ -69,7 +69,7 @@
         alt="">
     </div>
   </div>
-  <div class="grid gap-4">
+  <div class="grid gap-4 cursor-pointer">
     <div>
       <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-6.jpg"
         alt="">
@@ -83,7 +83,7 @@
         alt="">
     </div>
   </div>
-  <div class="grid gap-4">
+  <div class="grid gap-4 cursor-pointer">
     <div>
       <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-9.jpg"
         alt="">
