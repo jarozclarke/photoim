@@ -4,35 +4,40 @@ require_once __DIR__ . '/../models/UserModel.php';
 require_once __DIR__ . '/../core/Database.php';
 require_once __DIR__ . '/../core/Auth.php';
 
-class UserController {
+class UserController
+{
 	private $pdo;
 	private $userModel;
 	private $auth;
 
-	public function __construct() {
+	public function __construct()
+	{
 		$this->pdo = new Database();
 		$this->userModel = new UserModel($this->pdo->connection);
 		$this->auth = new Auth();
 	}
 
-	public function handleLogin() {
-	    $email = $_POST['email'];
-	    $password = $_POST['password'];
+	public function handleLogin()
+	{
+		$email = $_POST['email'];
+		$password = $_POST['password'];
 
-	    $user = $this->userModel->findByEmail($email);
+		$user = $this->userModel->findByEmail($email);
 
-	    if ($user && password_verify($password, $user['password'])) {
-	        $this->auth->login($user);  
-	        header('Location: ' . basePath('/feed'));
-	        exit;
-	    } else {
-	        header('Location: ' . basePath('/login?login_error=true'));
-	        exit;
-	    }
+		if ($user && password_verify($password, $user['password'])) {
+			session_start();
+			$_SESSION['user'] = $user['email'];
+			$this->auth->login($user);
+			header('Location: ' . basePath('/feed'));
+			exit;
+		} else {
+			header('Location: ' . basePath('/login?login_error=true'));
+			exit;
+		}
 	}
 
-
-	public function handleRegister() {
+	public function handleRegister()
+	{
 		$username = $_POST['username'];
 		$email = $_POST['email'];
 		$password = $_POST['password'];
@@ -54,10 +59,10 @@ class UserController {
 		}
 
 		$this->userModel->create($username, $email, $password);
-		header("Location: " . basePath('/login?registered_success=true'));
-		exit;
+			header("Location: " . basePath('/login?registered_success=true'));
+			exit;
 	}
-
+	
 	public function handleFetchUsernameAvatar($email) {
 		return $this->userModel->fetchUsernameAvatar($email);
 	}

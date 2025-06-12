@@ -48,12 +48,6 @@ body {
   border-radius: 6px;
 }
 
-  /* transition: transform 0.2s ease, background 0.2s ease;
-.link-button:hover {
-  transform: scale(1.03);
-  background: rgba(0, 0, 0, 0.05);
-} */
-
 
 .header .right {
   display: flex;

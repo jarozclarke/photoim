@@ -34,7 +34,7 @@ $router->get('/login', function() use($render, $auth){
 }); 
 
 $router->get('/register', function () use ($render, $auth) {
-	$auth->redirectIfAuthenticated();
+    $auth->redirectIfAuthenticated();
 	$render->setLayout('layouts/auth');
 	$render->view('auth/register', ['title' => 'Register Now']);
 });
@@ -52,7 +52,7 @@ $router->get('/feed', function() use($render, $auth, $user){
     $tags = $tagController->handleFetchTags();
 
     $userEmail = $auth->userId();
-    $userData = $user->handleFetchUsernameAvatar($userEmail);
+    $userData = $user->handleFetchUsernameAvatar($userEmail);       
 
     $render->setLayout('layouts/protected');
     $render->view('protected/feed', [
@@ -73,4 +73,3 @@ $router->get('/creation-post', function () use ($render, $auth) {
 	$render->setLayout('layouts/protected');
 	$render->view('protected/creation_post', ['title' => 'Create Post']);
 });
-

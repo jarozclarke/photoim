@@ -20,7 +20,8 @@ create table users_images (
     id int primary key auto_increment,
     user_id int,
     tag_id int,
-    name varchar(100) not null,
+    title varchar(100) not null,
+    description varchar(100),
     image_path varchar(50),
     is_favorite boolean default 0,
     created_at timestamp default CURRENT_TIMESTAMP
