@@ -46,7 +46,6 @@ $router->post('/login', fn() => $user->handleLogin());
 
 $router->get('/feed', function() use($render, $auth, $user){
     $auth->requireAuth();
-	$render->setLayout('layouts/protected');
 
     $tagController = new TagController();
     $tags = $tagController->handleFetchTags();
@@ -59,6 +58,16 @@ $router->get('/feed', function() use($render, $auth, $user){
         'title' => 'Feed',
         'tags' => $tags,
         'userData' => $userData
+    ]);
+});
+
+$router->get('/profile', function() use($render, $auth){
+    $auth->requireAuth();
+   
+
+    $render->setLayout('layouts/protected');
+    $render->view('protected/profile', [
+        'title' => 'Profile',
     ]);
 });
 

@@ -1,4 +1,4 @@
-<div class="flex flex-wrap justify-center items-center gap-4 my-10">
+<div class="flex flex-wrap justify-center items-center gap-4 p-10">
   	<a 
 	    href="<?= basePath('/creation-post') ?>"
       <button class="btn bg-blue-600 shadow-none border-none text-gray-200">
@@ -37,7 +37,7 @@
         <button class="px-4 py-1 bg-transparent rounded-full hover:bg-blue-600 transition-colors duration-300">
           More
         </button>
-        <div class="absolute z-10 invisible opacity-0 translate-y-2 group-hover:visible group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 bg-[#1e1e1e] border rounded shadow-md p-2">
+        <div class="absolute z-10 invisible opacity-0 translate-y-2 group-hover:visible group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 bg-gray-200 border rounded shadow-md p-2">
           <?php foreach (array_slice($tags, $limit) as $tag): ?>
             <div class="px-2 py-1 hover:bg-blue-600 cursor-pointer transition-colors duration-300">
               <?= htmlspecialchars($tag) ?>
@@ -49,7 +49,7 @@
   </div>
 </div>
 
-<div class="mx-10 grid grid-cols-2 md:grid-cols-4 gap-4">
+<div class="m-10 grid grid-cols-2 md:grid-cols-4 gap-4">
   <?php
     $dir = 'assets/images/post_photos/post_png/';
     $images = glob($dir . '*.{jpg,jpeg,png,gif,webp}', GLOB_BRACE);
