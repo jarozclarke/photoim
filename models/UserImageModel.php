@@ -1,10 +1,5 @@
 <?php
 
-<<<<<<< HEAD
-class UserImageModel {
-	
-}
-=======
 require_once __DIR__ . '/../core/Database.php';
 
 class UserImageModel
@@ -23,4 +18,3 @@ class UserImageModel
 	}
 }
 
->>>>>>> d520881f5a76aa2865a09311fb9bc50a9f1a72cb
