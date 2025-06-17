@@ -1,10 +1,5 @@
 <?php
 
-<<<<<<< HEAD
-class UserImageController {
-	
-}
-=======
 require_once __DIR__ . '/../core/Database.php';
 require_once __DIR__ . '/../models/UserImageModel.php';
 
@@ -47,4 +42,3 @@ class UserImageController
 		exit;
 	}
 }
->>>>>>> d520881f5a76aa2865a09311fb9bc50a9f1a72cb
