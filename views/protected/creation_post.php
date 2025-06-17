@@ -60,6 +60,11 @@
 					img.style.objectFit = "cover";
 					img.style.display = "block"; //for no spacing
 					preview.appendChild(img);
+
+					//hide text and icon for non-bg img
+					document.querySelector('.upload-text').style.display = 'none';
+					document.querySelector('.upload-note').style.display = 'none';
+					document.querySelector('.upload-icon').style.display = 'none';
 				};
 				reader.readAsDataURL(file);
 			} else {
@@ -89,6 +94,11 @@
 				img.style.height = "100%";
 				img.style.objectFit = "cover";
 				preview.appendChild(img);
+
+				//hide text and icon for non-bg img
+				document.querySelector('.upload-text').style.display = 'none';
+				document.querySelector('.upload-note').style.display = 'none';
+				document.querySelector('.upload-icon').style.display = 'none';
 			};
 			reader.readAsDataURL(file);
 		}
