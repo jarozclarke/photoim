@@ -64,13 +64,14 @@ $router->get('/feed', function() use($render, $auth, $user){
     ]);
 });
 
-$router->get('/profile', function() use($render, $auth){
+$router->get('/profile', function() use($render, $auth, $user){
     $auth->requireAuth();
-   
-
+    $userEmail = $auth->userId();
+    $userData = $user->handleFetchUsernameAvatar($userEmail);
     $render->setLayout('layouts/protected');
     $render->view('protected/profile', [
         'title' => 'Profile',
+        'userData' => $userData
     ]);
 });
 

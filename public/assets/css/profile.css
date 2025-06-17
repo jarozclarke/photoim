@@ -104,7 +104,74 @@ body {
     padding: 20px 69px;
 }
 
+.profile-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    gap: 16px;
+}
 
+.profile-header h1 {
+    flex: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.edit-profile-button {
+    flex-shrink: 0;
+    white-space: nowrap;
+}
+
+.profile-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 8px;
+}
+
+.profile-header h1 {
+    font-size: 32px;
+    font-weight: 700;
+    flex: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.edit-profile-button {
+    background-color: #49A4F9;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 16px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.edit-icon span {
+    font-size: 20px;
+}
+
+@media (max-width: 768px) {
+    .profile-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .edit-profile-button {
+        margin-top: 10px;
+        width: 100%;
+        justify-content: center;
+    }
+}
 
 .profile-picture-wrapper {
     position: absolute;
@@ -294,21 +361,54 @@ body {
         border-radius: 100px;
     }
 
-    .profile-details {
-        margin: 0;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        margin-top: 30px;
-    }
+.profile-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 300px;
+  margin-top: 10px;
+  padding-right: 40px;
+}
 
-    .profile-details h1 {
-        font-size: 36px;
-    }
+.profile-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
 
-    .profile-details p {
-        font-size: 20px;
-    }
+.profile-info h1 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.profile-info p {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #555;
+  margin: 0;
+}
+
+.profile-actions {
+  flex-shrink: 0;
+}
+
+.edit-profile-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #49A4F9;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.edit-icon span {
+  font-size: 20px;
+}
 
     .edit-profile-button {
         margin-left: 0;
