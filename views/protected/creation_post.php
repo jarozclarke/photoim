@@ -55,9 +55,10 @@
 				reader.onload = function (e) {
 					const img = document.createElement("img");
 					img.src = e.target.result;
-					img.style.maxWidth = "100%";
-					// img.style.maxHeight = "100%";
+					img.style.width = "100%";
+					img.style.height = "100%";
 					img.style.objectFit = "cover";
+					img.style.display = "block"; //for no spacing
 					preview.appendChild(img);
 				};
 				reader.readAsDataURL(file);
